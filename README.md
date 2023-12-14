@@ -5,7 +5,7 @@ Welcome to my QA Engineer portfolio! I am Aurellia Az Zahra Ugan, a passionate Q
 
 ## Projects
 
-### Project Name: E-commerce Website Testing
+### Magento: E-commerce Website Testing
 
 ### Overview
 
