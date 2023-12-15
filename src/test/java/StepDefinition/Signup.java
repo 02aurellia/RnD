@@ -40,7 +40,7 @@ public class Signup extends env{
     
     @And("User click button Create an Account")
     public void user_click_button_create_an_account() {
-        driver.findElement(By.cssSelector("button[title='Create an Account'] span")).click();;
+        driver.findElement(By.cssSelector("button[title='Create an Account'] span")).click();
     }
 
     //Positive Test
@@ -112,5 +112,17 @@ public class Signup extends env{
         WebElement emptyfield = driver.findElement(By.xpath("//*[contains(text(), 'This is a required field.')]"));
         emptyfield.isDisplayed();
         driver.close();
+    }
+
+    //Positive Test - User Create Account redirect from login page
+
+    @And("User go to Sign In page")
+    public void user_go_to_sign_in_page() {
+        driver.findElement(By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/a")).click();
+    }
+
+    @And("User click button Create an Account for New Customer")
+    public void user_click_button_create_an_account_for_new_customer() {
+        driver.findElement(By.xpath("//*[@id=\"maincontent\"]/div[3]/div/div[3]/div[2]/div[2]/div/div/a")).click();
     }
 }

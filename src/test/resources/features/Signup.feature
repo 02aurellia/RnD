@@ -34,3 +34,14 @@
         And User go to Create an Account page
         And User click button Create an Account
         Then User get required field alert
+
+    @signup @loginpage @positive
+    Scenario: User register redirect from login page
+        Given User on homepage
+        And User go to Sign In page
+        And User click button Create an Account for New Customer
+        When User input Personal Information
+        And User input Sign In Information
+        And User click button Create an Account
+        Then User is navigated to Account page
+
