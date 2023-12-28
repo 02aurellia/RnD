@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "StepDefinition",
-        tags = "@login", //use and,or to more spesific tags
-        plugin = {"pretty", "html:target/HtmlReport/login.html"}
+        tags = "@signup", //use and,or to more spesific tags
+        plugin = {"pretty", "html:target/HtmlReport/signup.html"}
 )
 public class RunTest {
 }

@@ -23,4 +23,12 @@ Feature: Login
         Then User go to a Sign In Page
         And User click button Sign In
         Then User get alert required field
+
+    @login @forgotpass
+    Scenario: User forgot password
+        Given User on a homepage
+        Then User go to a Sign In Page
+        And User click button Forgot Your Password
+        Then User input email
+        And User click button Reset Password
     

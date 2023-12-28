@@ -35,7 +35,7 @@
         And User click button Create an Account
         Then User get required field alert
 
-    @signup @loginpage @positive
+    @signup @loginpage
     Scenario: User register redirect from login page
         Given User on homepage
         And User go to Sign In page

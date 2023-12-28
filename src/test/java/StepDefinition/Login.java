@@ -63,8 +63,11 @@ public class Login extends env{
 
     @Then("User get alert the account incorrect")
     public void user_get_alert_the_account_incorrect() {
-        WebElement incorrectalert = driver.findElement(By.xpath("//*[contains(text(), 'The account sign-in was incorrect')]"));
-        incorrectalert.isDisplayed();
+        Duration duration = Duration.ofSeconds(3);
+        WebDriverWait wait = new WebDriverWait(driver, duration);
+        wait.until(
+            ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(), 'The account sign-in was incorrect')]"))
+        );
         driver.quit();
     }
     
@@ -76,5 +79,26 @@ public class Login extends env{
         WebElement emptyfield = driver.findElement(By.xpath("//*[contains(text(), 'This is a required field.')]"));
         emptyfield.isDisplayed();
         driver.close();
+    }
+
+    //Forgot Password
+    @Then("User click button Forgot Your Password")
+    public void user_click_button_forgot_your_password() {
+        driver.findElement(By.xpath("//a[@class='action remind']//span[contains(text(),'Forgot Your Password?')]")).click();
+    }
+
+    @Then("User input email")
+    public void user_input_email() {
+        driver.findElement(By.id("email_address")).sendKeys("qa1@test.com");
+    }
+    @And("User click button Reset Password")
+    public void user_click_button_reset_password() {
+        driver.findElement(By.xpath("//button[@class='action submit primary']")).click();
+        Duration duration = Duration.ofSeconds(3);
+        WebDriverWait wait = new WebDriverWait(driver, duration);
+        wait.until(
+            ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@data-bind='html: $parent.prepareMessageForHtml(message.text)']"))
+        );
+        driver.quit();
     }
 }
