@@ -1,7 +1,7 @@
 @All
 Feature: My Account Page
 
-    @edit @contact @name
+    @myaccount @edit @contact @name
     Scenario: User edit contact information - change name
     Given User successfully login
     Then User go to my account page
@@ -10,7 +10,7 @@ Feature: My Account Page
     And User click button Save contact
     Then User get alert You saved the account information
 
-    @edit @address @positive
+    @myaccount @edit @addressmyacc @positive
     Scenario: User successfully edit address
     Given User successfully login
     Then User go to my account page
@@ -20,7 +20,7 @@ Feature: My Account Page
     And User click button Save address
     Then User get alert You saved the address
 
-    @edit @address @negative
+    @myaccount @edit @addressmyacc @negative
     Scenario: User failed edit address - empty required field
     Given User successfully login
     Then User go to my account page

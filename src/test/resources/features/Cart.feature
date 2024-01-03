@@ -36,7 +36,7 @@ Feature: Add to Cart, View Detail Cart, Edit Cart and Delete Cart
     Then User get alert success updated shopping cart
 
     @edit @cart @negative
-    Scenario: User failed edit cart
+    Scenario: User failed edit cart - Didn't choose option
     Given User in homepage
     Then User click button Cart
     And User click button Edit product
