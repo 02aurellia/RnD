@@ -162,6 +162,7 @@ public class Address extends env {
         country_Select.selectByValue("CN");
         Select state_select = new Select(driver.findElement(By.id("region_id")));
         state_select.selectByValue("603");
+        driver.findElement(By.id("zip")).clear();
         driver.findElement(By.id("zip")).sendKeys("456789");
     }
 

@@ -17,7 +17,7 @@
         When User input Personal Information
         And User input Sign In Information with mismatch password
         And User click button Create an Account
-        Then Username get password mismatch alert
+        Then User get password mismatch alert
     
     @signup @negative @weakpass
     Scenario: User failed signup - weak password
@@ -26,7 +26,7 @@
         When User input Personal Information
         And User input Sign In Information with weak password
         And User click button Create an Account
-        Then Username get password weak alert
+        Then User get password weak alert
 
     @signup @negative @empty
     Scenario: User failed signup - empty credentials

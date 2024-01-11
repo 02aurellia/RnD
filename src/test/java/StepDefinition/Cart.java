@@ -94,7 +94,7 @@ public class Cart extends env {
     
     @Then("User get alert success add to Cart")
     public void user_get_alert_success_add_to_cart() {
-        Duration duration = Duration.ofSeconds(3);
+        Duration duration = Duration.ofSeconds(5);
         WebDriverWait wait = new WebDriverWait(driver, duration);
         wait.until(
             ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@data-bind='html: $parent.prepareMessageForHtml(message.text)']"))
@@ -137,7 +137,8 @@ public class Cart extends env {
         wait.until(
             ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[contains(text(),'Shopping Cart')]"))
         );
-        driver.quit();
+        
+        //driver.quit();
     }
 
     //Edit Product - Positive

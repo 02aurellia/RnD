@@ -77,8 +77,8 @@ public class Signup extends env{
         driver.findElement(By.id("password-confirmation")).sendKeys("Wxyz1234#");
     }
 
-    @Then("Username get password mismatch alert")
-    public void username_get_password_mismatch_alert() {
+    @Then("User get password mismatch alert")
+    public void user_get_password_mismatch_alert() {
         WebElement passalert = driver.findElement(By.id("password-confirmation-error"));
         passalert.isDisplayed();
         driver.close();
@@ -96,8 +96,8 @@ public class Signup extends env{
         driver.findElement(By.id("password-confirmation")).sendKeys("12345678");
     }
     
-    @Then("Username get password weak alert")
-    public void username_get_password_weak_alert() {
+    @Then("User get password weak alert")
+    public void user_get_password_weak_alert() {
         //find elements with text 'Weak'
         WebElement weakpass = driver.findElement(By.xpath("//*[contains(text(), 'Weak')]"));
         weakpass.isDisplayed();
