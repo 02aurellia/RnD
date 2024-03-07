@@ -47,10 +47,21 @@ public class SignupPage {
     @FindBy(xpath = "//*[contains(text(), 'This is a required field.')]")
     WebElement requiredField;
 
+    @FindBy(xpath = "/html/body/div[2]/header/div[1]/div/ul/li[2]/a")
+    WebElement btnSignIn;
+
+    @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div/div[3]/div[2]/div[2]/div/div/a")
+    WebElement btnSignUp;
+
     public SignupPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver,30),this);
 	}
+
+    public void verifyHomepage() throws InterruptedException{
+        Thread.sleep(2000);
+        verify_element.isDisplayed();
+    }
 
     public void goToSignUpPage() throws InterruptedException{
         verify_element.isDisplayed();
@@ -98,5 +109,13 @@ public class SignupPage {
 
     public void driverQuit(){
         driver.quit();
+    }
+
+    public void clickSignIn(){
+        btnSignIn.click();
+    }
+
+    public void clickSignUp(){
+        btnSignUp.click();
     }
 }
