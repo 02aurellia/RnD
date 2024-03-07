@@ -8,71 +8,72 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 public class MyAccountPage {
-    WebDriver driver;
+	WebDriver driver;
 
-    @FindBy(id = "ui-id-3")
-    @CacheLookup
-    WebElement verify_element;
+	@FindBy(id = "ui-id-3")
+	@CacheLookup // ensure the web elements load just once and do not have to reload whenever the
+					// method is called
+	WebElement verify_element;
 
-    @FindBy(xpath = "/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button")
-    WebElement ddMenu;
+	@FindBy(xpath = "/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button")
+	WebElement ddMenu;
 
-    @FindBy(xpath = "//div[@aria-hidden='false']//a[normalize-space()='My Account']")
-    WebElement hrefMyAccount;
+	@FindBy(xpath = "//div[@aria-hidden='false']//a[normalize-space()='My Account']")
+	WebElement hrefMyAccount;
 
-    @FindBy(xpath = "//span[normalize-space()='Edit']")
-    WebElement btnEdit;
+	@FindBy(xpath = "//span[normalize-space()='Edit']")
+	WebElement btnEdit;
 
-    @FindBy(id = "firstname")
-    WebElement tbFName;
+	@FindBy(id = "firstname")
+	WebElement tbFName;
 
-    @FindBy(id = "lastname")
-    WebElement tbLName;
+	@FindBy(id = "lastname")
+	WebElement tbLName;
 
-    @FindBy(xpath = "//span[normalize-space()='Save']")
-    WebElement btnSave;
+	@FindBy(xpath = "//span[normalize-space()='Save']")
+	WebElement btnSave;
 
-    @FindBy(xpath = "//div[@data-bind='html: $parent.prepareMessageForHtml(message.text)']")
-    WebElement puAlert;
+	@FindBy(xpath = "//div[@data-bind='html: $parent.prepareMessageForHtml(message.text)']")
+	WebElement puAlert;
 
-    @FindBy(id = "firstname-error")
-    WebElement errorAlert;
+	@FindBy(id = "firstname-error")
+	WebElement errorAlert;
 
-    public MyAccountPage(WebDriver driver) {
+	public MyAccountPage(WebDriver driver) {
 		this.driver = driver;
-		PageFactory.initElements(new AjaxElementLocatorFactory(driver,30),this);
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver, 30), this);
 	}
 
-    public void goToMyAccPage(){
-        verify_element.isDisplayed();
-        ddMenu.click();
-        hrefMyAccount.click();
-    }
+	public void goToMyAccPage() {
+		verify_element.isDisplayed();
+		ddMenu.click();
+		hrefMyAccount.click();
+	}
 
-    public void clickBtnEdit(){
-        btnEdit.click();
-    }
+	public void clickBtnEdit() {
+		btnEdit.click();
+	}
 
-    public void inputNewName(String Name){
-        tbFName.clear();
-        tbFName.sendKeys(Name);
-    }
+	public void inputNewName(String Name) {
+		tbFName.clear();
+		tbFName.sendKeys(Name);
+	}
 
-    public void clickBtnSave(){
-        btnSave.click();
-    }
+	public void clickBtnSave() {
+		btnSave.click();
+	}
 
-    public void alertSuccess() throws InterruptedException{
-        Thread.sleep(2000);
-        puAlert.isDisplayed();
-    }
+	public void alertSuccess() throws InterruptedException {
+		Thread.sleep(2000);
+		puAlert.isDisplayed();
+	}
 
-    public void clear(){
-        tbFName.clear();
-        tbLName.clear();
-    }
+	public void clear() {
+		tbFName.clear();
+		tbLName.clear();
+	}
 
-    public void alertRequired() throws InterruptedException{
-        errorAlert.isDisplayed();
-    }
+	public void alertRequired() throws InterruptedException {
+		errorAlert.isDisplayed();
+	}
 }

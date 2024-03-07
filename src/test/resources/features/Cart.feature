@@ -43,14 +43,6 @@ Feature: Add to Cart, View Detail Cart, Edit Cart and Delete Cart
     Then User click button Update Cart
     Then User get alert options required field
 
-    @delete @cart @positive
-    Scenario: User success delete product from cart
-    Given User in homepage
-    Then User click button Cart
-    And User click button delete product
-    Then User get confirmation modal
-    And User click button Ok
-
     @delete @cart @negative
     Scenario: User cancel delete product from cart
     Given User in homepage
@@ -58,5 +50,13 @@ Feature: Add to Cart, View Detail Cart, Edit Cart and Delete Cart
     And User click button delete product
     Then User get confirmation modal
     And User click button Cancel
+
+    @delete @cart @positive
+    Scenario: User success delete product from cart
+    Given User in homepage
+    Then User click button Cart
+    And User click button delete product
+    Then User get confirmation modal
+    And User click button Ok
 
 
